@@ -163,7 +163,7 @@ DmaCmd.exe /Action=AssessTargetReadiness
 
 ```
 
-**Target Readiness assessment by importing feature collection report created earlier**
+**Target Readiness assessment by importing feature discovery report created earlier**
 
 ```
 DmaCmd.exe /Action=AssessTargetReadiness 
@@ -181,7 +181,7 @@ DmaCmd.exe /Action=AssessTargetReadiness
 /TargetReadinessConfiguration=.\Config.xml
 
 ```
-Configuration file contents:
+Configuration file contents when using source connections:
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <TargetReadinessConfiguration xmlns="http://microsoft.com/schemas/SqlServer/Advisor/TargetReadinessConfiguration">
@@ -195,6 +195,16 @@ Configuration file contents:
   <AssessmentResultJson>path\to\file.json</AssessmentResultJson>
   <FeatureDiscoveryReportJson>path\to\featurediscoveryreport.json</FeatureDiscoveryReportJson>
   <OverwriteResult>true</OverwriteResult> <!-- or false -->
+</TargetReadinessConfiguration>
+```
+
+Configuration file contents when importing feature discovery report:
+```
+<TargetReadinessConfiguration xmlns="http://microsoft.com/schemas/SqlServer/Advisor/TargetReadinessConfiguration">
+  <AssessmentName>name</AssessmentName>
+  <ImportFeatureDiscoveryReportJson>path\to\featurediscoveryfile.json</ImportFeatureDiscoveryReportJson>
+  <AssessmentResultJson>path\to\resultfile.json</AssessmentResultJson>
+  <OverwriteResult>true</OverwriteResult><!-- or false -->
 </TargetReadinessConfiguration>
 ```
 
